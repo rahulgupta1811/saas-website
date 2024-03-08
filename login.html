@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Page</title>
+<link rel="stylesheet" type="text/css" href="Loginstyles.css"> <!-- Linking the CSS file -->
+</head>
+<body>
+
+<div id="login-box">
+    <h2>Login</h2>
+    <form id="login-form">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <input type="submit" value="Login">
+    </form>
+    <div class="options">
+        <a href="#" id="signup-link">Sign Up</a>
+        <a href="#" id="forgot-password-link">Forgot Password?</a>
+    </div>
+</div>
+
+<script>
+    document.getElementById("login-form").addEventListener("submit", function(event){
+        event.preventDefault(); // Prevent form submission
+
+        // Fetch input values
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Check if username and password are correct (for demo purposes, the credentials are hardcoded)
+        if(username === "admin" && password === "password") {
+            alert("Login successful!");
+            // Redirect to a new page or perform other actions upon successful login
+        } else {
+            alert("Invalid username or password. Please try again.");
+        }
+    });
+
+    document.getElementById("signup-link").addEventListener("click", function(event){
+        event.preventDefault(); // Prevent default action of anchor tag
+        alert("Redirect to sign-up page");
+        // Redirect to sign-up page
+    });
+
+    document.getElementById("forgot-password-link").addEventListener("click", function(event){
+        event.preventDefault(); // Prevent default action of anchor tag
+        alert("Redirect to forgot password page");
+        // Redirect to forgot password page
+    });
+</script>
+
+</body>
+</html>
